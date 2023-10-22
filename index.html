@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" type="image/x-icon" href="Assets/Logo_edit.Magazin.png">
+     <script src="./collageOption.js"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+     <title>Photo Editor</title>
+</head>
+
+
+<style>
+     :root {
+          --blur: 0%;
+          --brightness: 100%;
+          --constrast: 100%;
+          --hueRotate: 0%;
+          --grayscale: 0%;
+          --invert: 0%;
+          --opacity: 100%;
+          --saturate: 100%;
+          --sepia: 0%;
+          --rotate: 0deg;
+     }
+
+     .image {
+
+          filter: blur(var(--blur)) brightness(var(--brightness)) contrast(var(--constrast)) grayscale(var(--grayscale)) invert(var(--invert)) opacity(var(--opacity)) saturate(var(--saturate)) sepia(var(--sepia));
+          transform: rotate(var(--rotate));
+     }
+</style>
+
+
+<body class="bg-gray-100 overflow-x-hidden">
+
+     <script>header()</script>
+     <div class="text-xl sm:text-3xl md:text-5xl font-semibold inline-block text-center w-screen px-5">Upload Your Image to edit them and
+          download it</div>
+     <div class="p-5 min-w-full h-fit my-10 max-w-full flex place-content-center items-center">
+          <div class="lg:flex w-full h-full place-content-center items-center lg:space-x-20  md:mt-20">
+               <div id="block1" class=" flex place-content-center items-center w-full h-full">
+                    <div class="items-center justify-center w-72 h-72 sm:w-full sm:h-full md:h-3/4 flex space-x-5">
+                         <label for="dropzone-file-1"
+                              class="overflow-hiden p-5 flex flex-col items-center justify-center w-72 h-72 sm:h-full sm:w-full lg:w-full lg:h-full border-black rounded-lg cursor-pointer bg-gray-50">
+                              <div id="imgArea-1"
+                                   class="image w-66 h-66 bg-transparent flex flex-col items-center justify-center">
+                                   <svg id="svg-1" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                             stroke-width="2"
+                                             d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                   </svg>
+                                   <div id="text-1">
+                                        <p class=" mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                                  class="font-semibold">Click to upload</span></p>
+                                   </div>
+                              </div>
+                              <input id="dropzone-file-1" type="file" class="hidden" />
+                              <button id="download" type="button"
+                                   class="translate-y-3 px-10 py-2 rounded-sm bg-black text-white w-fit h-fit text-center hidden">Download</button>
+                         </label>
+                    </div>
+               </div>
+
+               <div id="sliderSection" class="w-full lg:w-1/2 h-[500px] space-y-1 hidden">
+                    <div class="text-center text-lg mt-10 lg:mt-0 bg-black text-white py-2">Move the silder to edit your photos</div>
+
+                    <div>
+                         <label for="blur" class="block mx-auto">Blur</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="blur" name="blur" min="0" max="100" value="0"
+                                   class="w-full">
+                              <div id="blurValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="brightness" class="block mx-auto">Brightness</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="brightness" name="brightness" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="brightnessValue">100</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="constrast" class="block mx-auto">Constrast</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="constrast" name="constrast" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="constrastValue">100</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="grayscale" class="block mx-auto">Grayscale</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="grayscale" name="grayscale" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="grayscaleValue">0</div>
+                         </div>
+                    </div>
+                    <div class="hidden">
+                         <label for="hueRotate" class="block mx-auto">Hue Rotate</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="hueRotate" name="hueRotate" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="hueRotateValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="invert" class="block mx-auto">Invert</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="invert" name="invert" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="invertValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="opacity" class="block mx-auto">Opacity</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="opacity" name="opacity" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="opacityValue">100</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="saturate" class="block mx-auto">Saturate</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="saturate" name="saturate" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="saturateValue">100</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="sepia" class="block mx-auto">Sepia</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="sepia" name="sepia" min="0" max="100" value="0"
+                                   class="w-full">
+                              <div id="sepiaValue">0</div>
+                         </div>
+                    </div>
+
+                    <div id="rotate"
+                         class="w-full h-fit p-1 mx-auto flex place-content-center items-center translate-y-2 bg-blue-700 rounded-2xl">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                              class="bi bi-arrow-clockwise h-8 w-8 text-white" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                   d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                              <path
+                                   d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                         </svg>
+                    </div>
+               </div>
+          </div>
+
+     </div>
+     <div class="hidden xl:block">
+          <script>collageOptions();</script>
+     </div>
+     <script>footer();</script>
+</body>
+
+<script src="dom-to-image.js"></script>
+
+<script>
+
+     // getting uploaded image (start)
+
+     const fileInput1 = document.querySelector("#dropzone-file-1");
+     const imgArea1 = document.querySelector("#imgArea-1");
+     const svgElement1 = document.getElementById("svg-1");
+     const textElement1 = document.getElementById("text-1");
+     let currentImage;
+
+     fileInput1.addEventListener('change', () => {
+          const image = fileInput1.files[0];
+          if (image) {
+               const reader = new FileReader();
+               reader.onload = () => {
+                    const imgUrl = reader.result;
+                    const img = document.createElement('img');
+                    img.className = "w-66 h-66 sm:w-full sm:h-full lg:w-4/5 lg:h-4/5 bg-cover  overflow-hidden";
+                    img.src = imgUrl;
+
+                    if (currentImage) {
+                         imgArea1.removeChild(currentImage); 
+                    }
+
+                    currentImage = img; 
+                    imgArea1.appendChild(img); 
+                    img.draggable = 'off';
+                    svgElement1.style.display = 'none';
+                    textElement1.style.display = 'none';
+               };
+               reader.readAsDataURL(image);
+          }
+
+          if (document.getElementById("dropzone-file-1").files && document.getElementById("dropzone-file-1").files.length > 0) {
+               document.getElementById("sliderSection").style.display = "block";
+               document.getElementById("download").style.display = "block";
+          }
+     });
+
+     // getting uploaded image (ended)
+
+     var blurs = document.getElementById("blur");
+     var brightness = document.getElementById("brightness");
+     var constrast = document.getElementById("constrast");
+     var grayscale = document.getElementById("grayscale");
+     var hueRotate = document.getElementById("hueRotate");
+     var invert = document.getElementById("invert");
+     var opacity = document.getElementById("opacity");
+     var saturate = document.getElementById("saturate");
+     var sepia = document.getElementById("sepia");
+     var rotate = document.getElementById("rotate");
+
+
+     let root = document.querySelector(":root");
+
+     let slider = document.querySelectorAll('input');
+
+     blurs.addEventListener('input', () => {
+          console.log("Blur slider changed"); // Add this line to check if the event is triggered
+          root.style.setProperty("--blur", blurs.value / 10 + 'px');
+          document.getElementById("blurValue").innerHTML = blurs.value;
+     });
+
+
+     brightness.addEventListener("input", () => {
+          root.style.setProperty("--brightness", (brightness.value * 2) + "%");
+          document.getElementById("brightnessValue").innerHTML = brightness.value;
+     });
+
+     constrast.addEventListener("input", () => {
+          root.style.setProperty("--constrast", (constrast.value) + "%");
+          document.getElementById("constrastValue").innerHTML = constrast.value;
+     });
+
+     grayscale.addEventListener("input", () => {
+          root.style.setProperty("--grayscale", grayscale.value + "%");
+          document.getElementById("grayscaleValue").innerHTML = grayscale.value;
+     });
+
+     hueRotate.addEventListener("input", () => {
+          root.style.setProperty("--hueRotate", hueRotate.value + "deg");
+          document.getElementById("hueRotateValue").innerHTML = hueRotate.value;
+     });
+
+     invert.addEventListener("input", () => {
+          root.style.setProperty("--invert", invert.value + "%");
+          document.getElementById("invertValue").innerHTML = invert.value;
+     });
+
+     opacity.addEventListener("input", () => {
+          root.style.setProperty("--opacity", opacity.value + "%");
+          document.getElementById("opacityValue").innerHTML = opacity.value;
+     });
+
+     saturate.addEventListener("input", () => {
+          root.style.setProperty("--saturate", saturate.value + "%");
+          document.getElementById("saturateValue").innerHTML = saturate.value;
+     });
+
+     sepia.addEventListener("input", () => {
+          root.style.setProperty("--sepia", sepia.value + "%");
+          document.getElementById("sepiaValue").innerHTML = sepia.value;
+     });
+
+     let degree = 0;
+     rotate.addEventListener("click", () => {
+          degree = degree + 90;
+          root.style.setProperty("--rotate", degree + 90 + "deg");
+     });
+
+
+     var image = document.getElementById("imgArea-1");
+     var button = document.getElementById("download");
+
+     button.addEventListener('click', () => {
+          domtoimage.toPng(image).then((data) => {
+               var link = document.createElement("a");
+               link.download = "your_edited_photo.png";
+               link.href = data;
+               link.click();
+          });
+
+          setTimeout(() => {
+               button.style.display = 'block';
+          }, 2000)
+     });
+</script>
+
+</html>

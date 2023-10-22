@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" type="image/x-icon" href="Assets/Logo_edit.Magazin.png">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="collageOption.js"></script>
+     <title>Photo Editior</title>
+</head>
+
+<style>
+     :root {
+          --blur: 0%;
+          --brightness: 100%;
+          --constrast: 100%;
+          --grayscale: 0%;
+          --hueRotate: 0%;
+          --invert: 0%;
+          --opacity: 100%;
+          --saturate: 100%;
+          --sepia: 0%;
+          --rotate: 0deg;
+     }
+
+     .image {
+          filter: blur(var(--blur)) brightness(var(--brightness)) contrast(var(--constrast)) grayscale(var(--grayscale)) invert(var(--invert)) opacity(var(--opacity)) saturate(var(--saturate)) sepia(var(--sepia));
+          transform: rotate(var(--rotate));
+     }
+
+     .circle {
+          position: absolute;
+          background-color: rgb(231, 230, 230);
+          /* You can change the color here */
+          border-radius: 50%;
+     }
+
+     .circle:nth-child(1) {
+          transform: rotate(0deg) translate(300px) rotate(0deg);
+     }
+
+     .circle:nth-child(2) {
+          transform: rotate(40deg) translate(300px) rotate(-40deg);
+     }
+
+     .circle:nth-child(3) {
+          transform: rotate(80deg) translate(300px) rotate(-80deg);
+     }
+
+     .circle:nth-child(4) {
+          transform: rotate(120deg) translate(300px) rotate(-120deg);
+     }
+
+     .circle:nth-child(5) {
+          transform: rotate(160deg) translate(300px) rotate(-160deg);
+     }
+
+     .circle:nth-child(6) {
+          transform: rotate(200deg) translate(300px) rotate(-200deg);
+     }
+
+     .circle:nth-child(7) {
+          transform: rotate(240deg) translate(300px) rotate(-240deg);
+     }
+
+     .circle:nth-child(8) {
+          transform: rotate(280deg) translate(300px) rotate(-280deg);
+     }
+
+     .circle:nth-child(9) {
+          transform: rotate(320deg) translate(300px) rotate(-320deg);
+     }
+</style>
+
+
+<body class="overflow-x-hidden">
+
+     <div><script>header()</script></div>
+
+     
+     <div class="text-xl sm:text-3xl md:text-5xl font-semibold inline-block text-center w-screen px-5">Upload Your Image to edit them and
+          download it</div>     <div>
+          <div class="flex mt-20 justify-center">
+               <div id="imageCollage"
+                    class="w-3/5 rounded-[60px] h-[900px] place-content-center items-center flex flex-wrap scale-[60%] bg -translate-y-44 -translate-x-[100px]">
+                    <label for="dropzone-file-1" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-1"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-1" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-1">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-1" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-2" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-2"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-2" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-2">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-2" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-3" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-3"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-3" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-3">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-3" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-4" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-4"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-4" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-4">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-4" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-5" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-5"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-5" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-5">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-5" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-6" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-6"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-6" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-6">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-6" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-7" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-7"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-7" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-7">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-7" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-8" class="circle h-44 w-44 overflow-hidden">
+                         <div id="imgArea-8"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-8" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-8">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-8" type="file" class="hidden" />
+                    </label>
+                    <label for="dropzone-file-9" class="circle h-44 w-44 overflow-hidden bg-white">
+                         <div id="imgArea-9"
+                              class="image w-full h-full bg-gray-100 flex flex-col items-center justify-center overflow-hidden">
+                              <svg id="svg-9" class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                              </svg>
+                              <div id="text-9">
+                                   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                             to
+                                             upload</span></p>
+                              </div>
+                         </div>
+                         <input id="dropzone-file-9" type="file" class="hidden" />
+                    </label>
+                    <button id="download" type="button"
+                         class=" px-10 py-2 rounded-sm text-4xl translate-y-[500px] bg-black text-white w-fit h-fit text-center scale-100">Download</button>
+               </div>
+               <div id="sliderSection" class="w-1/3 -translate-x-20 h-[500px] px-5 space-y-1 translate-y-10">
+                    <div class="text-center text-2xl bg-black text-white py-2">Move the silder to edit your photos</div>
+                    <div>
+                         <label for="blur" class="block mx-auto">Blur</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="blur" name="blur" min="0" max="100" value="0"
+                                   class="w-full">
+                              <div id="blurValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="brightness" class="block mx-auto">Brightness</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="brightness" name="brightness" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="brightnessValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="constrast" class="block mx-auto">Constrast</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="constrast" name="constrast" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="constrastValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="grayscale" class="block mx-auto">Grayscale</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="grayscale" name="grayscale" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="grayscaleValue">0</div>
+                         </div>
+                    </div>
+                    <div class="hidden">
+                         <label for="hueRotate" class="block mx-auto">Hue Rotate</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="hueRotate" name="hueRotate" min="0" max="100"
+                                   value="0" class="w-full">
+                              <div id="hueRotateValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="invert" class="block mx-auto">Invert</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="invert" name="invert" min="0" max="100" value="0"
+                                   class="w-full">
+                              <div id="invertValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="opacity" class="block mx-auto">Opacity</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="opacity" name="opacity" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="opacityValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="saturate" class="block mx-auto">Saturate</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="saturate" name="saturate" min="0" max="100"
+                                   value="100" class="w-full">
+                              <div id="saturateValue">0</div>
+                         </div>
+                    </div>
+                    <div>
+                         <label for="sepia" class="block mx-auto">Sepia</label>
+                         <div class="flex space-x-5">
+                              <input autocomplete="off" type="range" id="sepia" name="sepia" min="0" max="100" value="0"
+                                   class="w-full">
+                              <div id="sepiaValue">0</div>
+                         </div>
+                    </div>
+     
+                    <div id="rotate"
+                         class="w-full h-fit p-1 mx-auto flex place-content-center items-center translate-y-2 bg-blue-700 rounded-2xl">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                              class="bi bi-arrow-clockwise h-8 w-8 text-white" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                   d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                              <path
+                                   d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                         </svg>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="-translate-y-[180px] hidden xl:block"><script>collageOptions();</script></div>
+     <div class="-translate-y-[17px]"><script>footer();</script></div>
+
+</body>
+
+<script src="dom-to-image.js"></script>
+
+<script>
+     function handleFileChange(fileInput, imgArea, svgElement, textElement) {
+          fileInput.addEventListener('change', () => {
+               const image = fileInput.files[0];
+
+               const reader = new FileReader();
+
+               reader.onload = () => {
+                    const imgUrl = reader.result;
+                    const img = document.createElement('img');
+                    img.className = "w-full h-full bg-cover rounded-full absloute z-20 overflow-hidden";
+                    img.src = imgUrl;
+
+                    imgArea.appendChild(img);
+
+                    svgElement.style.display = 'none';
+                    textElement.style.display = 'none';
+
+                    fileInput.disabled = false;
+
+               };
+
+               if (image) {
+                    reader.readAsDataURL(image);
+               }
+          });
+     }
+
+     // Blocks
+     const blocks = [
+          {
+               fileInput: document.querySelector("#dropzone-file-1"),
+               imgArea: document.querySelector("#imgArea-1"),
+               svgElement: document.getElementById("svg-1"),
+               textElement: document.getElementById("text-1"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-2"),
+               imgArea: document.querySelector("#imgArea-2"),
+               svgElement: document.getElementById("svg-2"),
+               textElement: document.getElementById("text-2"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-3"),
+               imgArea: document.querySelector("#imgArea-3"),
+               svgElement: document.getElementById("svg-3"),
+               textElement: document.getElementById("text-3"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-4"),
+               imgArea: document.querySelector("#imgArea-4"),
+               svgElement: document.getElementById("svg-4"),
+               textElement: document.getElementById("text-4"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-5"),
+               imgArea: document.querySelector("#imgArea-5"),
+               svgElement: document.getElementById("svg-5"),
+               textElement: document.getElementById("text-5"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-6"),
+               imgArea: document.querySelector("#imgArea-6"),
+               svgElement: document.getElementById("svg-6"),
+               textElement: document.getElementById("text-6"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-7"),
+               imgArea: document.querySelector("#imgArea-7"),
+               svgElement: document.getElementById("svg-7"),
+               textElement: document.getElementById("text-7"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-8"),
+               imgArea: document.querySelector("#imgArea-8"),
+               svgElement: document.getElementById("svg-8"),
+               textElement: document.getElementById("text-8"),
+          },
+          {
+               fileInput: document.querySelector("#dropzone-file-9"),
+               imgArea: document.querySelector("#imgArea-9"),
+               svgElement: document.getElementById("svg-9"),
+               textElement: document.getElementById("text-9"),
+          },
+     ];
+
+     blocks.forEach((block) => {
+          handleFileChange(block.fileInput, block.imgArea, block.svgElement, block.textElement);
+     });
+
+
+     // getting uploaded image (ended)
+
+     var blurs = document.getElementById("blur");
+     var brightness = document.getElementById("brightness");
+     var constrast = document.getElementById("constrast");
+     var grayscale = document.getElementById("grayscale");
+     var hueRotate = document.getElementById("hueRotate");
+     var invert = document.getElementById("invert");
+     var opacity = document.getElementById("opacity");
+     var saturate = document.getElementById("saturate");
+     var sepia = document.getElementById("sepia");
+     var rotate = document.getElementById("rotate");
+
+
+     let root = document.querySelector(":root");
+
+     let slider = document.querySelectorAll('input');
+
+     blurs.addEventListener('input', () => {
+          root.style.setProperty("--blur", blurs.value + 'px');
+          document.getElementById("blurValue").innerHTML = blurs.value;
+     })
+
+     brightness.addEventListener("input", () => {
+          root.style.setProperty("--brightness", brightness.value + "%");
+          document.getElementById("brightnessValue").innerHTML = brightness.value;
+     });
+
+     constrast.addEventListener("input", () => {
+          root.style.setProperty("--constrast", constrast.value + "%");
+          document.getElementById("constrastValue").innerHTML = constrast.value;
+     });
+
+     grayscale.addEventListener("input", () => {
+          root.style.setProperty("--grayscale", grayscale.value + "%");
+          document.getElementById("grayscaleValue").innerHTML = grayscale.value;
+     });
+
+     hueRotate.addEventListener("input", () => {
+          root.style.setProperty("--hueRotate", hueRotate.value + "deg");
+          document.getElementById("hueRotateValue").innerHTML = hueRotate.value;
+     });
+
+     invert.addEventListener("input", () => {
+          root.style.setProperty("--invert", invert.value + "%");
+          document.getElementById("invertValue").innerHTML = invert.value;
+     });
+
+     opacity.addEventListener("input", () => {
+          root.style.setProperty("--opacity", opacity.value + "%");
+          document.getElementById("opacityValue").innerHTML = opacity.value;
+     });
+
+     saturate.addEventListener("input", () => {
+          root.style.setProperty("--saturate", saturate.value + "%");
+          document.getElementById("saturateValue").innerHTML = saturate.value;
+          console.log("hit")
+     });
+
+     sepia.addEventListener("input", () => {
+          root.style.setProperty("--sepia", sepia.value + "%");
+          document.getElementById("sepiaValue").innerHTML = sepia.value;
+     });
+
+     let degree = 0;
+     rotate.addEventListener("click", () => {
+          degree = degree + 180;
+          root.style.setProperty("--rotate", degree + 180 + "deg");
+     });
+
+     var image = document.getElementById("imageCollage");
+     var button = document.getElementById("download");
+     var removeBorder = document.querySelectorAll("label");
+
+     button.addEventListener('click', () => {
+          removeBorder.forEach((element) => {
+               element.style.border = 'none';
+          });
+          image.style.width = '2500px'
+          image.style.backgroundColor = "#acf1ef";
+          button.style.display = 'none';
+          domtoimage.toPng(image).then((data) => {
+               var link = document.createElement("a");
+               image.style.width = '2500px'
+               link.download = "your_edited_collage.png";
+               link.href = data;
+               link.click();
+          });
+          setTimeout(()=>{
+          image.style.backgroundColor = "white";
+          image.style.width = '60%'
+          button.style.display = 'block';
+     },500)
+     });
+
+</script>
+
+</html>
